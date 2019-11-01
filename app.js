@@ -35,12 +35,12 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var multiplyAnyArray = [];
   var productAnswer = a * b;
-  console.log(productAnswer);
+  // console.log(productAnswer);
   multiplyAnyArray[0] = productAnswer;
   var result = `The product of ${a} and ${b} is ${productAnswer}.`
-  console.log(result);
+  // console.log(result);
   multiplyAnyArray[1] = result;
-  console.log(multiplyAnyArray);
+  // console.log(multiplyAnyArray);
   return multiplyAnyArray;
   
 }
@@ -66,11 +66,29 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sumAndMultiplyArray = [];
+  var sum2Numbers = sum(a,b);
+  var sum3Numbers = sum(sum2Numbers[0],c);
+  // console.log('sum of three numbers ' + sum3Numbers);
+  sumAndMultiplyArray[0] = sum3Numbers[0];
+
+  var multiply2Numbers = multiply(a,b);
+  var multiply3Numbers = multiply(multiply2Numbers[0],c);
+  // console.log('multiply three numbers is ' + multiply3Numbers);
+  sumAndMultiplyArray[1] = multiply3Numbers[0];
+
+  sumAndMultiplyArray[2] = `${a} and ${b} and ${c} sum to ${sum3Numbers[0]}.`
+  sumAndMultiplyArray[3] = `The product of ${a} and ${b} and ${c} is ${multiply3Numbers[0]}.`
+  console.log('console log array values ' + sumAndMultiplyArray);
+
+  return sumAndMultiplyArray;
 
 }
 
+// sumAndMultiply(1,2,5);
+
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
